@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Jaqueline Lopes - Criadora de conteúdo lifestyle, fitness e fashion">
+    <title>Jaqueline Lopes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        /* ========== RESET & BASE ========== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background-color: #fafafa;
+            color: #1a1a1a;
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        /* ========== HERO SECTION ========== */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, rgba(0,0,0,0.02) 0%, transparent 70%);
+            animation: float 20s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            50% { transform: translate(-20px, 20px) rotate(5deg); }
+        }
+
+        .hero-content {
+            max-width: 600px;
+            position: relative;
+            z-index: 1;
+            animation: fadeInUp 0.8s ease;
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .hero-image {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto 30px;
+            border: 4px solid #ffffff;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.12);
+            transition: transform 0.3s ease;
+        }
+
+        .hero-image:hover {
+            transform: scale(1.05);
+        }
+
+        /* EDITAR: Cambiar src en línea 245 */
+
+        .hero h1 {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #1a1a1a;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-tagline {
+            font-size: 18px;
+            color: #666;
+            margin-bottom: 30px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 14px 40px;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 30px;
+            font-size: 15px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.15);
+        }
+
+        .hero-cta:hover {
+            background-color: #333;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
+        }
+
+        /* ========== CONTAINER GENÉRICO ========== */
+        .section {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 32px;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 16px;
+            color: #1a1a1a;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            color: #666;
+            font-size: 16px;
+            margin-bottom: 50px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        /* ========== SOBRE MIM ========== */
+        .about {
+            background-color: #ffffff;
+        }
+
+        .about-content {
+            max-width: 700px;
+            margin: 0 auto;
+            text-align: center;
+            line-height: 1.8;
+            color: #4a4a4a;
+            font-size: 17px;
+        }
+
+        /* EDITAR: Cambiar texto en línea 280 */
+
+        /* ========== GALERIA ========== */
+        .gallery {
+            background-color: #fafafa;
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            position: relative;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            aspect-ratio: 4/5;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        /* EDITAR: Cambiar src de imágenes en líneas 328-333 */
+
+        /* ========== SOCIAL PROOF ========== */
+        .social-proof {
+            background-color: #ffffff;
+        }
+
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .social-card {
+            background: #fafafa;
+            border-radius: 16px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+            transition: transform 0.3s ease;
+        }
+
+        .social-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .social-icon {
+            width: 60px;
+            height: 60px;
+            margin: 0 auto 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 28px;
+            font-weight: 700;
+        }
+
+        .social-card h3 {
+            font-size: 20px;
+            margin-bottom: 10px;
+            color: #1a1a1a;
+        }
+
+        .social-card p {
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* ========== PROJETOS & COMUNIDADE ========== */
+        .projects {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e9e9e9 100%);
+        }
+
+        .projects-intro {
+            max-width: 650px;
+            margin: 0 auto 40px;
+            text-align: center;
+            color: #4a4a4a;
+            font-size: 16px;
+            line-height: 1.7;
+        }
+
+        /* EDITAR: Cambiar texto en línea 386 */
+
+        .projects-buttons {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .project-btn {
+            display: block;
+            padding: 20px 30px;
+            background-color: #ffffff;
+            color: #1a1a1a;
+            text-decoration: none;
+            text-align: center;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border: 2px solid transparent;
+        }
+
+        .project-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+            border-color: #1a1a1a;
+        }
+
+        /* EDITAR: Cambiar href en líneas 394-396 */
+
+        /* ========== ONDE ME ENCONTRAR ========== */
+        .social-links {
+            background-color: #ffffff;
+            padding: 60px 20px;
+        }
+
+        .social-links-container {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .social-links h2 {
+            font-size: 28px;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+        }
+
+        .social-icons-grid {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .social-link {
+            width: 60px;
+            height: 60px;
+            background-color: #1a1a1a;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            text-decoration: none;
+            font-size: 24px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        }
+
+        .social-link:hover {
+            transform: translateY(-5px) scale(1.1);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+        /* EDITAR: Cambiar href en líneas 429-431 */
+
+        /* ========== FOOTER ========== */
+        .footer {
+            background-color: #1a1a1a;
+            color: #999;
+            text-align: center;
+            padding: 40px 20px;
+            font-size: 14px;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        /* ========== RESPONSIVE ========== */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 32px;
+            }
+
+            .hero-tagline {
+                font-size: 16px;
+            }
+
+            .hero-image {
+                width: 140px;
+                height: 140px;
+            }
+
+            .section {
+                padding: 60px 20px;
+            }
+
+            .section-title {
+                font-size: 26px;
+            }
+
+            .gallery-grid {
+                grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+                gap: 15px;
+            }
+
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-buttons {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                padding: 40px 20px;
+            }
+
+            .hero h1 {
+                font-size: 28px;
+            }
+
+            .section {
+                padding: 50px 16px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- ========== HERO SECTION ========== -->
+    <section class="hero">
+        <div class="hero-content">
+            <!-- EDITAR: Trocar src pela foto real -->
+            <img src="https://i.ibb.co/zWvTrkD2/IMG-20251116-WA0155.jpg" alt="Jaqueline Lopes" border="0" class="hero-image">
+            
+            <!-- EDITAR: Nome (se necessário) -->
+            <h1>Jaqueline Lopes</h1>
+            
+            <!-- EDITAR: Tagline (se necessário) -->
+            <p class="hero-tagline">Lifestyle • Fitness • Fashion</p>
+            
+            <!-- EDITAR: Link do botão -->
+            <a href="#projects" class="hero-cta">Explorar</a>
+        </div>
+    </section>
+
+    <!-- ========== SOBRE MIM ========== -->
+    <section class="section about">
+        <h2 class="section-title">Sobre mim</h2>
+        <div class="about-content">
+            <!-- EDITAR: Texto sobre você -->
+            <p>
+                Sou modelo e criadora de conteúdo.
+                Aqui compartilho um pouco do que não cabe no feed:
+                rotina, detalhes e bastidores do meu dia a dia.
+            </p>
+        </div>
+    </section>
+
+    <!-- ========== GALERIA ========== -->
+    <section class="section gallery">
+        <h2 class="section-title">Portfolio</h2>
+        <p class="section-subtitle">Alguns momentos do meu trabalho</p>
+        
+        <div class="gallery-grid">
+            <!-- EDITAR: Trocar src pelas fotos reais (6 imagens SFW) -->
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/V8kTf3M/IMG-20251208-WA0114.jpg" border="0">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/DJHy3C4/IMG-20251116-WA0146.jpg" border="0">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/Psy1C2HY/Whats-App-Image-2025-12-18-at-23-51-07-1.jpg" border="0">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/mFSfHzc3/IMG-20251116-WA0143.jpg" border="0">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/zWvTrkD2/IMG-20251116-WA0155.jpg" border="0">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.ibb.co/BH2g2bZN/IMG-20251116-WA0156.jpg" border="0">
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== SOCIAL PROOF ========== -->
+    <section class="section social-proof">
+        <h2 class="section-title">Presença Digital</h2>
+        <p class="section-subtitle">Me acompanhe nas redes sociais</p>
+        
+        <div class="social-grid">
+            <div class="social-card">
+                <div class="social-icon">IG</div>
+                <h3>Instagram</h3>
+                <p>Conteúdo diário sobre lifestyle e fitness</p>
+            </div>
+            <div class="social-card">
+                <div class="social-icon">TT</div>
+                <h3>TikTok</h3>
+                <p>Vídeos rápidos e dicas práticas</p>
+            </div>
+            <div class="social-card">
+                <div class="social-icon">X</div>
+                <h3>Twitter</h3>
+                <p>Pensamentos e interações em tempo real</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== PROJETOS & COMUNIDADE ========== -->
+    <section class="section projects" id="projects">
+        <h2 class="section-title">Projetos & Comunidade</h2>
+        
+        <div class="projects-intro">
+            <!-- EDITAR: Texto de introdução (se necessário) -->
+            <p>
+                Alguns projetos e comunidades não aparecem diretamente nas redes sociais. 
+                Aqui você encontra acesso direto aos meus outros trabalhos e espaços colaborativos.
+            </p>
+        </div>
+
+        <div class="projects-buttons">
+            <!-- EDITAR: Trocar href="#" pelos links reais -->
+            <a href="https://t.me/jackloppesbr" class="project-btn">Canal</a>
+            <a href="https://privacy.com.br/@jackloppes" class="project-btn">Comunidade</a>
+            <a href="https://beacons.ai/jaqueline_loppes" class="project-btn">Outros conteúdos</a>
+        </div>
+    </section>
+
+    <!-- ========== ONDE ME ENCONTRAR ========== -->
+    <section class="social-links">
+        <div class="social-links-container">
+            <h2>Onde me encontrar</h2>
+            
+            <div class="social-icons-grid">
+                <!-- EDITAR: Trocar href="#" pelos links reais das redes -->
+                <a href="https://www.instagram.com/jack_loppes_/" class="social-link" aria-label="Instagram">📷</a>
+                <a href="https://www.tiktok.com/@jaquelinelopesde31" class="social-link" aria-label="TikTok">🎵</a>
+                <a href="https://www.threads.com/@jack_loppes_" class="social-link" aria-label="Threads">📱</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========== FOOTER ========== -->
+    <footer class="footer">
+        <!-- EDITAR: Ano ou nome (se necessário) -->
+        <p>© 2025-2026 Jaqueline Lopes. Todos os direitos reservados.</p>
+    </footer>
+
+</body>
+</html>
